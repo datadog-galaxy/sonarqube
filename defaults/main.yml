@@ -1,0 +1,4 @@
+version: 7.3
+database_user: sonarqube
+database_password: mypassword
+database_driver: jdbc:driver

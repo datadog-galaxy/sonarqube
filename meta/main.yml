@@ -1,0 +1,19 @@
+galaxy_info:
+  author: DATA
+  description: "SonarQube provision role"
+  company: DATA DOG
+  license: BSD
+  min_ansible_version: 2
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+
+  galaxy_tags:
+  - sonarqube
+  - oracle_java
+  - centos 7
+
+dependencies:
+  - datadog-galaxy.oracle_java

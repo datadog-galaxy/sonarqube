@@ -1,0 +1,23 @@
+---
+
+- name: SONARQUBE | DOWNLOAD SOURCE
+  unarchive:
+    src: https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-{{ version }}.zip
+    dest: /opt/sonarqube
+    remote_src: yes
+
+- name: SONARQUBE | CONFIG
+  template:
+    src: sonar.properties
+    dest: /opt/sonarqube/conf/sonar.properties
+
+- name: SONARQUBE | CREATE STARTUP SCRIPT
+  template:
+    src: sonar.service
+    dest: /etc/systemd/system/sonar.service
+
+- name: SONARQUBE | LAUNCH
+  service:
+    name: sonar
+    state: started
+    enabled: yes
